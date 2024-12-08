@@ -3,20 +3,14 @@
   <head>
     <meta charset="utf-8">
     <link href ="main.css" rel="stylesheet">
+	<script src="main.js" type="module"></script>
     <title>Wordle</title>
-    <style>
-	@font-face{font-family:std;src:url("Astonpoliz.ttf")}
-	body{font-family: std;}
-	h1{text-align: center;font-size:350%;margin-bottom: 0;margin-top:0;}
-	button{font-family: std;transition:0.5s all;font-size:150%;margin-top:1.25vh;text-align: center;background-color:var(--bckg);border:var(--text)solid 0.5vw;border-radius:25vw;width: 33vw;height: 7.5vh;}
-	button:hover{background-color:var(--text);cursor: pointer;}
-	p{text-align: center;font-size: 200%;margin:0;}
-    </style>
   </head>
   <body>
 	  <h1>Wordle</h1>
 	  <p id = "msg"></p>
-	  <column>
+	  <div>
+	<column>
 	  	<row id = "r1">
 		<c class = "idle"></c>
 		<c class = "idle"></c>
@@ -59,9 +53,45 @@
 		<c class = "idle"></c>
 		<c class = "idle"></c>
 		</row>
-	  </column>
-	  <h2 id = "answer" class="nonvisible"></h2>
-	  <button id = "retry" class="onvisible" onclick="window.location.reload()">Retry</button>
-	  <script src="main.js" type="module"></script>
+	</column>
+	</div>
+	<div id = "keyboard"class = "keyboard">
+		<row>
+		<button>q</button>
+		<button>w</button>
+		<button>e</button>
+		<button>r</button>
+		<button>t</button>
+		<button>y</button>
+		<button>u</button>
+		<button>i</button>
+		<button>o</button>
+		<button>p</button>
+		</row>
+		<row class = "second">
+		<button>a</button>
+		<button>s</button>
+		<button>d</button>
+		<button>f</button>
+		<button>g</button>
+		<button>h</button>
+		<button>j</button>
+		<button>k</button>
+		<button>l</button>
+		</row>
+		<row>
+		<button class = "two">Bac</button>
+		<button>z</button>
+		<button>x</button>
+		<button>c</button>
+		<button>v</button>
+		<button>b</button>
+		<button>n</button>
+		<button>m</button>
+		<button class = "two">Ent</button>
+		</row>
+	</div>
+	<h2 id = "answer" class="nonvisible"></h2>
+	<button id = "retry" class="nonvisible" onclick="window.location.reload()">Retry</button>
   </body>
 </html>
