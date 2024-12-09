@@ -1,12 +1,12 @@
 :root{
-	--back : black;
-	--text: white;
-	--border: darkgrey;
+	--back : white;
+	--text: black;
+	--border: lightgrey;
 	--idle: gray;
 	--correct: #73F59D;
 	--placed: #F5DB73;
 	--wrong: #F57673;
-	--size: 5vw;
+	--size: 4vw;
 }
 body{
 	display: flex;
@@ -33,17 +33,19 @@ button{
 	align-items:center;
 font-family: std;
 transition:0.5s all;
-font-size:calc(var(--size) * 0.625);
+font-size:calc(var(--size) * 0.325);
 background-color:var(--back);
 color: var(--text);
-border:var(--text)solid 0.25vw;
+border:var(--border)solid calc(var(--size) / 10);
 border-radius:25vw;
-width: calc(var(--size) * 5.25);
-height: calc(var(--size) * 1.25);
-margin: 1vh auto;
+width: calc(var(--size) * 6);
+height: calc(var(--size) * 0.9);
+margin: auto;
+margin-top: 0;
 }
 button:hover{
 cursor: pointer;
+background-color:var(--border);
 }
 button::after{
 	content:"";
@@ -52,7 +54,7 @@ button::after{
 	margin-top: 0.2vh;
 	padding-left: calc(var(--size) / 3);
 	padding-right: calc(var(--size) / 3);
-	background: linear-gradient(90deg, var(--wrong) 0%, var(--correct) 100%);
+	background: linear-gradient(90deg, blue 0%, var(--wrong) 100%);
 	transition: 0.5s all;
 }
 button:hover::after{
@@ -61,8 +63,9 @@ button:hover::after{
 }
 p{
 text-align: center;
-font-size: 200%;
+font-size: 150%;
 margin:0;
+font-weight: 500;
 }
 
 div{
@@ -83,13 +86,13 @@ c{
 	flex-direction: column;
 	justify-content: center;
 	font-size: calc(var(--size) / 1.5);
-	color: black;
-	border-radius: 1.25vw;
-	margin: 0.125vw;
-	background-color: var(--text);
+	color: var(--text);
+	border-radius: calc(var(--size) / 5);
+	margin: calc(var(--size) / 80);
+	background-color: var(--back);
 	width: var(--size);
 	height: var(--size);
-	border: var(--border) solid 0.5vw;
+	border: var(--border) solid calc(var(--size) / 10);
 }
 .idle::after{
 	position: static;
@@ -131,11 +134,12 @@ c{
 	display: none;
 }
 .keyboard{
-	width: 75%;
+	width: 65%;
 	display: flex;
 	flex-direction: column;
 	align-items:center;
 	margin: auto;
+	margin-bottom: 0;
 }
 .keyboard column{
 	display: flex;
@@ -150,18 +154,42 @@ c{
 	margin:auto;
 }
 .keyboard button{
-	border-radius: 0.5vw;
-	margin: 0;
-	width: var(--size);
-	height: var(--size);
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items:center;
+	border: var(--border) calc(var(--size) / 12) solid;
+	border-radius: calc(var(--size) / 4.5);
+	font-size: calc(var(--size) / 4);
+	margin: calc(var(--size) * 0.01);
+	width: calc(var(--size) / 1.7);
+	height: calc(var(--size)/ 1.7);
+}
+.keyboard button:hover{
+	background-color: var(--border);
 }
 .second button{
-	width: calc(var(--size) * 1.11);
+	width: calc(var(--size) * 0.67);
 }
 .keyboard button:hover{cursor:pointer}
 .keyboard button::after{
 	display:none;
 }
 .keyboard .two{
-	width: calc(var(--size) * 1.5);
+	width: calc(var(--size) / 1.05);
+}
+@media only screen and (max-width: 450px) and (min-width: 380px){
+	:root{
+		--size: 15vw;
+	}
+}
+@media only screen and (min-width: 450px) and (max-width: 1024px){
+	:root{
+		--size: 7vw;
+	}
+}
+@media only screen and (max-width: 380px){
+	:root{
+		--size: 15vw;
+	}
 }
