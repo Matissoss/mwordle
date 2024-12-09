@@ -1,4 +1,4 @@
-import init, {csv} from "/csv.js";
+import init, {csv} from "https://github.com/Matissoss/mwordle/blob/main/csv.js";
 
 function $(html){
 	return document.getElementById(html);
