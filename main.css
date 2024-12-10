@@ -161,35 +161,25 @@ c{
 	border: var(--border) calc(var(--size) / 12) solid;
 	border-radius: calc(var(--size) / 4.5);
 	font-size: calc(var(--size) / 4);
-	margin: calc(var(--size) * 0.01);
-	width: calc(var(--size) / 1.7);
-	height: calc(var(--size)/ 1.7);
+	margin: calc(var(--size) * 0.02);
+	width: calc(var(--size) / 1.4);
+	height: calc(var(--size)/ 1.4);
 }
 .keyboard button:hover{
 	background-color: var(--border);
 }
 .second button{
-	width: calc(var(--size) * 0.67);
+	width: calc(var(--size) * 0.8);
 }
 .keyboard button:hover{cursor:pointer}
 .keyboard button::after{
 	display:none;
 }
 .keyboard .two{
-	width: calc(var(--size) / 1.05);
+	width: calc(var(--size) / 0.9);
 }
-@media only screen and (max-width: 450px) and (min-width: 380px){
+@media (max-width: 1200px){
 	:root{
-		--size: 15vw;
-	}
-}
-@media only screen and (min-width: 450px) and (max-width: 1024px){
-	:root{
-		--size: 7vw;
-	}
-}
-@media only screen and (max-width: 380px){
-	:root{
-		--size: 15vw;
+		--size: 6.5vh;
 	}
 }

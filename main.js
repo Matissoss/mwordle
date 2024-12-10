@@ -145,21 +145,26 @@ function handle_enter(){
 	set_currentlypressed();
 }
 function check_password(){
+	let already_entered = [];
 	let input = "";
 	for (let i = 0; i < currently_sellected.childElementCount; i++){
 		input += currently_sellected.children[i].innerHTML;
 	}
 	for (let j = 0; j < input.length; j++){
 		console.log(input[j]);
-		if (input[j] == ANSWER[j]){
+		if (input[j] == ANSWER[j] && !already_entered.includes(input[j])){
 			currently_sellected.children[j].className="correct";
 		}
-		else if (contains(ANSWER, input[j])){
+		else if (contains(ANSWER, input[j]) && !already_entered.includes(input[j])){
 			currently_sellected.children[j].className = "placed";
 		}
-		else if (!contains(ANSWER, input[j])){
+		else if (!contains(ANSWER, input[j]) && !already_entered.includes(input[j])){
 			currently_sellected.children[j].className = "wrong";
 		}
+		else if (already_entered.includes(input[j])){
+			currently_sellected.children[j].className = "wrong";
+		}
+		already_entered.push(input[j]);
 	}
 	if (input == ANSWER){
 		for(let k = 0; k < currently_sellected.childElementCount; k++){
