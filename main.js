@@ -44,7 +44,7 @@ function is_mobile() {
 }
 
 
-let file_conts = await get_file("/data/pl.csv");
+let file_conts = await get_file("/mwordle/data/pl.csv");
 let vec = await csvfn(file_conts);
 let index = Math.floor(Math.random() * 5500);
 // Const's declaration
